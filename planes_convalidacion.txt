@@ -1,0 +1,25 @@
+
+01 10
+Universidad de Cordoba Universidad de Sevilla
+EPS - ETSII
+II 2 1
+pp-ee;pe-pe
+
+02 2
+Uno ef
+ek - fk
+fkk 2 3
+kfk-ggg. ookrkgk-gkkgk. krkgkr-s
+
+12345 30
+Universidad A Universidad B
+Facultad de Ciencias - Facultad de Ingeniería
+Ingeniería Informática 4 2024-2025
+Matemáticas I-Mathematics I. Programación-Programming. 
+
+12345 30
+Universidad A Universidad B
+Facultad de Ciencias - Facultad de Ingeniería
+Ingeniería Informática 4 2024-2025
+Matemáticas I-Mathematics I. Programación-Programming. 
+
