@@ -19,6 +19,7 @@ int main() {
 
     // Llamar al método para agregar un plan de convalidación
     plan.agregarPlanConvalidacion("planes_convalidacion.txt", plan);
+    plan.imprimirPlanesDeConvalidacion("planes_convalidacion.txt");
 
     return 0;
 }

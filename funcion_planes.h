@@ -42,6 +42,7 @@ public:
 
     // Método para agregar un plan de convalidación
     void agregarPlanConvalidacion(const std::string& archivo, PlanesDeConvalidacion plan);
+    void imprimirPlanesDeConvalidacion(const std::string& archivo);
 };
 
 #endif // FUNCION_PLANES_H

@@ -1,25 +1,35 @@
-
 01 10
-Universidad de Cordoba Universidad de Sevilla
-EPS - ETSII
-II 2 1
-pp-ee;pe-pe
+Universidad de Córdoba Universidad de Sevilla
+Escuela politecnica superior de Córdoba - Escuela Técnica Superior de Ingeniería Informática
+Ingenieria informatica 2 1
+Introdución a la programación-Fundamentos de Programación. Cálculo-Cálculo Infinitesimal y Numérico. Estadistica-Estadistica. Física-Fundamentos Físicos de la Informática. Economía y Administración de Empresas-Administración de Empresas. Metodología de la programación-Fundamentos de Progrmación. Fundamentos y Estructuras de Computadores-Estructura de Computadores. Circuitos y Sistemas Electrónicos-Circuitos Electrónicos Digitales. Matemática Discreta-Introducción a la Matematica Discreta. Álgebra Lineal-Álgebra Lineal y Numérica.
 
-02 2
-Uno ef
-ek - fk
-fkk 2 3
-kfk-ggg. ookrkgk-gkkgk. krkgkr-s
+02 7
+Universidad de Cadiz Universidad de Córdoba 
+Escuela Superior de Ingeniería Escuela politecnica superior de Córdoba 
+Ingenieria Mécanica 1 2
+Ampliación de Matemáticas - Matemáticas III. Termotecnia - Mecánica de Fluidos I. Teoría de Mecanismos y Máquinas - Electrotecnia. Elasticidad y Resistencia de Materiales I - Ingeniería Térmica I. Tecnología Ambiental - Mecánica de Materiales.
 
-12345 30
-Universidad A Universidad B
-Facultad de Ciencias - Facultad de Ingeniería
-Ingeniería Informática 4 2024-2025
-Matemáticas I-Mathematics I. Programación-Programming. 
+03 4
+Universidad de Granada Universidad de Sevilla
+Escuela Técnica Superior de Ingenierías Informática y de Telecomunicación Escuela Técnica Superior de Ingeniería Informática
+Ingeniería Informática 2 3
+Sistemas Operativos II - Sistemas Operativos Avanzados. Bases de Datos - Diseño de Bases de Datos. Programación Avanzada - Desarrollo de Software. Arquitectura de Computadores - Diseño de Sistemas de Computación. Redes de Computadores - Redes y Comunicaciones. Matemáticas Discretas II - Lógica Computacional. Inteligencia Artificial - Aprendizaje Automático. Ingeniería del Software - Ingeniería del Software Avanzada. Seguridad Informática - Ciberseguridad. Lenguajes de Programación - Paradigmas de Programación
 
-12345 30
-Universidad A Universidad B
-Facultad de Ciencias - Facultad de Ingeniería
-Ingeniería Informática 4 2024-2025
-Matemáticas I-Mathematics I. Programación-Programming. 
+04 8
+Universidad de Barcelona Universitat Politècnica de Catalunya
+Facultad de Filosofía y Letras Facultad de Ciencias Sociales y de la Comunicación
+Psicología 1 2
+Psicología General - Psicología Experimental. Psicología del Desarrollo - Psicología Evolutiva. Psicología Social - Psicología Social y de Grupos. Estadística Aplicada a la Psicología - Métodos de Investigación. Neuropsicología - Bases Biológicas de la Conducta. Introducción a la Psicopatología - Psicopatología y Psicología Clínica. Fundamentos de la Comunicación - Teoría de la Comunicación. Psicología de la Percepción - Procesos Cognitivos. Psicología de la Educación - Psicología Educacional. Técnicas de Entrevista y Evaluación - Evaluación Psicológica.
 
+05 2
+Universidad de extremadura Universidad de Santiago de Compostela
+Facultad de derecho Facultad de derecho
+Derecho 1 3
+Derecho de Familia-Derecho de familia. Derecho de sucesiones-Derecho de sucesiones .Derecho Penal I -Derecho Procesal Penal. Derecho Mercantil I-Derecho Mercantil I. Derecho Penal - Derecho Procesal Penal.
+
+06 6
+Universidad de Valencia Universidad de Burgos
+Facultat de Dret Facultad de Derecho
+Historia 1 4
+Arqueología del Mediterráneo - Patrimonio etnológico e inmaterial. Paleografía y Diplomática -  Patrimonio documental y bibliográfico. Mujeres y Hombres en la Historia - España siglo XX. Trabajo fin de grado - Trabajo fin de grado. Optatividad - Geografia de España.
