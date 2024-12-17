@@ -13,12 +13,12 @@ private:
     std::string facultadOrigen;
     std::string facultadDestino;
     std::string carrera;
-    int duracion; // En cuatrimestres
+    int duracion;
     std::string curso;
     std::vector<std::pair<std::string, std::string>> asignaturas;
 
 public:
-    // Métodos getter
+
     std::string getId() const { return id; }
     int getNumeroPlazas() const { return numeroPlazas; }
     std::string getUniversidadOrigen() const { return universidadOrigen; }
@@ -29,7 +29,8 @@ public:
     int getDuracion() const { return duracion; }
     std::string getCurso() const { return curso; }
     std::vector<std::pair<std::string, std::string>> getAsignaturas() const { return asignaturas; }
-     void setId(const std::string& nuevoId) { id = nuevoId; }
+
+    void setId(const std::string& nuevoId) { id = nuevoId; }
     void setNumeroPlazas(int nuevoNumero) { numeroPlazas = nuevoNumero; }
     void setUniversidadOrigen(const std::string& universidad) { universidadOrigen = universidad; }
     void setUniversidadDestino(const std::string& universidad) { universidadDestino = universidad; }
@@ -40,9 +41,19 @@ public:
     void setCurso(const std::string& nuevoCurso) { curso = nuevoCurso; }
     void setAsignaturas(const std::vector<std::pair<std::string, std::string>>& nuevasAsignaturas) { asignaturas = nuevasAsignaturas; }
 
-    // Método para agregar un plan de convalidación
-    void agregarPlanConvalidacion(const std::string& archivo, PlanesDeConvalidacion plan);
+    void agregarPlanConvalidacion(const std::string& archivo);
     void imprimirPlanesDeConvalidacion(const std::string& archivo);
+};
+
+class Inscripcion {
+private:
+    std::string dni;
+    std::string credencialUniversitaria;
+    std::string nombreCompleto;
+    PlanesDeConvalidacion plan;
+
+public:
+    void crearInscripcion(const std::string& archivoPlanes, std::string credencial);
 };
 
 #endif // FUNCION_PLANES_H
