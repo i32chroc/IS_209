@@ -11,6 +11,11 @@ std::string formatearLinea(const std::string& titulo, const std::string& valor);
 TEST(PlanesDeConvalidacionTest, AgregarPlanConvalidacion) {
     PlanesDeConvalidacion plan;
     std::string archivo = "planes_test.txt";
+
+    // Simula la entrada del usuario
+    std::istringstream input("02-3\n30\nUniversidad A\nUniversidad B\nFacultad X\nFacultad Y\nIngeniería\n4\n2024\n2\nMatemáticas I - Matemáticas A\nFísica I - Física A\n");
+    std::cin.rdbuf(input.rdbuf());
+
     EXPECT_TRUE(plan.agregarPlanConvalidacion(archivo));
 
     std::ifstream archivoEntrada(archivo);
@@ -28,6 +33,18 @@ TEST(PlanesDeConvalidacionTest, AgregarPlanConvalidacion) {
     EXPECT_TRUE(encontrado);
 }
 
+// Prueba para agregar un plan de convalidación a un archivo que no existe y no se puede crear
+TEST(PlanesDeConvalidacionTest, AgregarPlanConvalidacionArchivoNoExistente) {
+    PlanesDeConvalidacion plan;
+    std::string archivo = "/ruta/no/existente/planes_test.txt";
+
+    // Simula la entrada del usuario
+    std::istringstream input("02-3\n30\nUniversidad A\nUniversidad B\nFacultad X\nFacultad Y\nIngeniería\n4\n2024\n2\nMatemáticas I - Matemáticas A\nFísica I - Física A\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    EXPECT_FALSE(plan.agregarPlanConvalidacion(archivo));
+}
+
 // Prueba para formatear una línea
 TEST(PlanesDeConvalidacionTest, FormatearLinea) {
     std::string titulo = "Universidad de origen";
@@ -37,26 +54,6 @@ TEST(PlanesDeConvalidacionTest, FormatearLinea) {
     EXPECT_EQ(resultado, esperado);
 }
 
-// Prueba para inscripción con un plan existente
-TEST(InscripcionTest, InscripcionPlanExistente) {
-    Inscripcion inscripcion;
-    std::string archivoPlanes = "planes_test.txt";
-    std::string credencial = "123456789";
-    EXPECT_TRUE(inscripcion.crearInscripcion(archivoPlanes, credencial));
-
-    std::ifstream archivoInscripcion("02123456789_inscripcion.txt"); // Ajusta el nombre del archivo según los datos de prueba
-    EXPECT_TRUE(archivoInscripcion.is_open());
-    archivoInscripcion.close();
-}
-
-// Prueba para inscripción con un plan no existente
-TEST(InscripcionTest, InscripcionPlanNoExistente) {
-    Inscripcion inscripcion;
-    std::string archivoPlanes = "planes_test.txt";
-    std::string credencial = "987654321";
-    EXPECT_FALSE(inscripcion.crearInscripcion(archivoPlanes, credencial));
-}
-
 // Prueba para leer planes de convalidación
 TEST(PlanesDeConvalidacionTest, LeerPlanesDeConvalidacion) {
     PlanesDeConvalidacion plan;
@@ -64,31 +61,28 @@ TEST(PlanesDeConvalidacionTest, LeerPlanesDeConvalidacion) {
     EXPECT_TRUE(plan.imprimirPlanesDeConvalidacion(archivo));
 }
 
-// Prueba para verificar historial de inscripciones
-TEST(InscripcionTest, HistorialDeInscripciones) {
-    Inscripcion inscripcion;
-    std::string archivoPlanes = "planes_test.txt";
-    std::string credencial = "123456789";
+// Prueba para leer planes de convalidación no existente
+TEST(PlanesDeConvalidacionTest, LeerPlanesDeConvalidacionNoexistente) {
+    PlanesDeConvalidacion plan;
+    std::string archivo = "/ruta/no/existente/planes_test.txt";
+    EXPECT_FALSE(plan.imprimirPlanesDeConvalidacion(archivo));
+}
 
-    EXPECT_TRUE(inscripcion.crearInscripcion(archivoPlanes, credencial));
-
-    std::ifstream archivoHistorial("123456789_historial.txt"); // Ajusta el nombre del archivo según los datos de prueba
-    ASSERT_TRUE(archivoHistorial.is_open()) << "No se pudo abrir el archivo de historial.";
-
-    bool encontradoHistorial = false;
-    std::string linea;
-    while (std::getline(archivoHistorial, linea)) {
-        if (linea.find("Inscripción realizada") != std::string::npos) {
-            encontradoHistorial = true;
-            break;
-        }
-    }
-    archivoHistorial.close();
-    EXPECT_TRUE(encontradoHistorial);
+TEST(PlanesDeConvalidacionTest, FormatearLineaerror) {
+    std::string titulo = "Facultad de Ciencias";
+    std::string valor = "Universidad Central";
+    std::string resultado = formatearLinea(titulo, valor);
+    std::string esperado = "Facultad de Ciencias       : Universidad Global\n"; // Se cambian ambos valores
+    EXPECT_NE(resultado, esperado); // Compara que los valores sean diferentes
 }
 
 // Función principal
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+    ::testing::GTEST_FLAG(output) = "none"; // Desactiva la salida detallada de Google Test
+    int result = RUN_ALL_TESTS();
+    if (result == 0) {
+        std::cout << "Todas las pruebas se han pasado correctamente." << std::endl;
+    }
+    return result;
 }

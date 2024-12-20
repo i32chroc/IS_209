@@ -45,9 +45,6 @@ public:
     bool imprimirPlanesDeConvalidacion(const std::string& archivo);
 };
 
-// Declaración de la función formatearLinea
-std::string formatearLinea(const std::string& titulo, const std::string& valor);
-
 class Inscripcion {
 private:
     std::string dni;

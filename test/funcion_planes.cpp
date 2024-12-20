@@ -77,11 +77,13 @@ bool PlanesDeConvalidacion::agregarPlanConvalidacion(const std::string& archivo)
     }
 }
 
+
 std::string formatearLinea(const std::string& titulo, const std::string& valor) {
     std::ostringstream oss;
     oss << std::left << std::setw(35) << titulo << ": " << valor << "\n";
     return oss.str();
 }
+
 
 bool Inscripcion::crearInscripcion(const std::string& archivoPlanes, std::string credencial) {
     std::string idPlan;
@@ -91,7 +93,7 @@ bool Inscripcion::crearInscripcion(const std::string& archivoPlanes, std::string
     std::ifstream archivoEntrada(archivoPlanes);
     if (!archivoEntrada.is_open()) {
         std::cerr << "Error al abrir el archivo de planes de convalidación." << std::endl;
-        return true ;
+        return false;
     }
 
     std::string linea;
@@ -142,7 +144,7 @@ bool Inscripcion::crearInscripcion(const std::string& archivoPlanes, std::string
 
     if (!planEncontrado) {
         std::cerr << "No se encontró el plan con el ID especificado." << std::endl;
-        return true ;
+        return false;
     }
 
     std::string dni, nombreCompleto;
@@ -177,6 +179,7 @@ bool Inscripcion::crearInscripcion(const std::string& archivoPlanes, std::string
         std::cout << "Inscripción creada y guardada en " << nombreArchivoInscripcion << std::endl;
     } else {
         std::cerr << "Error al crear el archivo de inscripción." << std::endl;
+        return false;
     }
     
     std::time_t now = std::time(nullptr);
