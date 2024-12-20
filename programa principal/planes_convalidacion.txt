@@ -34,8 +34,3 @@ Facultat de Dret-Facultad de Derecho
 Historia-1 4
 Arqueología del Mediterráneo - Patrimonio etnológico e inmaterial. Paleografía y Diplomática -  Patrimonio documental y bibliográfico. Mujeres y Hombres en la Historia - España siglo XX. Trabajo fin de grado - Trabajo fin de grado. Optatividad - Geografia de España.
 
-P001-30
-Universidad A-Universidad B
-Facultad de Ciencias-Facultad de Ingeniería
-Ingeniería Informática-8 2024-2025
-Matemáticas I - Cálculo I. Física I - Física General. Programación I - Introducción a la Programación. 

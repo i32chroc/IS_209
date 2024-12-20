@@ -4,7 +4,7 @@
 #include <sstream>
 #include "funcion_planes.h"
 
-void PlanesDeConvalidacion::agregarPlanConvalidacion(const std::string& archivo) {
+bool PlanesDeConvalidacion::agregarPlanConvalidacion(const std::string& archivo) {
     std::ofstream archivoSalida(archivo, std::ios::app);
     if (archivoSalida.is_open()) {
         std::string input;
@@ -71,8 +71,10 @@ void PlanesDeConvalidacion::agregarPlanConvalidacion(const std::string& archivo)
 
         archivoSalida.close();
         std::cout << "Plan de convalidación guardado correctamente.\n";
+        return true;
     } else {
         std::cerr << "Error al abrir el archivo.\n";
+        return false;
     }
 }
 
@@ -83,8 +85,8 @@ std::string formatearLinea(const std::string& titulo, const std::string& valor) 
     return oss.str();
 }
 
-//crear/escribir archivo historial
-void Inscripcion::crearInscripcion(const std::string& archivoPlanes, std::string credencial) {
+
+bool Inscripcion::crearInscripcion(const std::string& archivoPlanes, std::string credencial) {
     std::string idPlan;
     std::cout << "Ingrese el ID del plan al que desea inscribirse: ";
     std::getline(std::cin, idPlan);
@@ -92,7 +94,7 @@ void Inscripcion::crearInscripcion(const std::string& archivoPlanes, std::string
     std::ifstream archivoEntrada(archivoPlanes);
     if (!archivoEntrada.is_open()) {
         std::cerr << "Error al abrir el archivo de planes de convalidación." << std::endl;
-        return;
+        return true ;
     }
 
     std::string linea;
@@ -143,7 +145,7 @@ void Inscripcion::crearInscripcion(const std::string& archivoPlanes, std::string
 
     if (!planEncontrado) {
         std::cerr << "No se encontró el plan con el ID especificado." << std::endl;
-        return;
+        return true ;
     }
 
     std::string dni, nombreCompleto;
@@ -192,11 +194,16 @@ void Inscripcion::crearInscripcion(const std::string& archivoPlanes, std::string
     	archivoHistorial << "-----------------------------------------------\n";
     	archivoHistorial.close();
     	std::cout << "Historial actualizado";
-    } else { std::cerr << "Error al actualizar el historial de inscripciones.";}
+        return true;
+    }
+     else { std::cerr << "Error al actualizar el historial de inscripciones.";
+        return false;    
+    }
+
 }
 
 
-void PlanesDeConvalidacion::imprimirPlanesDeConvalidacion(const std::string& archivo) {
+bool PlanesDeConvalidacion::imprimirPlanesDeConvalidacion(const std::string& archivo) {
     std::ifstream archivoEntrada(archivo);
     if (archivoEntrada.is_open()) {
         std::string linea;
@@ -205,7 +212,9 @@ void PlanesDeConvalidacion::imprimirPlanesDeConvalidacion(const std::string& arc
         }
         archivoEntrada.close();
         std::cout << "\nPlanes de convalidación mostrados correctamente." << std::endl;
+        return true;
     } else {
         std::cerr << "Error al abrir el archivo para lectura." << std::endl;
+        return false;
     }
 }

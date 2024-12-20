@@ -41,9 +41,12 @@ public:
     void setCurso(const std::string& nuevoCurso) { curso = nuevoCurso; }
     void setAsignaturas(const std::vector<std::pair<std::string, std::string>>& nuevasAsignaturas) { asignaturas = nuevasAsignaturas; }
 
-    void agregarPlanConvalidacion(const std::string& archivo);
-    void imprimirPlanesDeConvalidacion(const std::string& archivo);
+    bool agregarPlanConvalidacion(const std::string& archivo);
+    bool imprimirPlanesDeConvalidacion(const std::string& archivo);
 };
+
+// Declaración de la función formatearLinea
+std::string formatearLinea(const std::string& titulo, const std::string& valor);
 
 class Inscripcion {
 private:
@@ -53,7 +56,7 @@ private:
     PlanesDeConvalidacion plan;
 
 public:
-    void crearInscripcion(const std::string& archivoPlanes, std::string credencial);
+    bool crearInscripcion(const std::string& archivoPlanes, std::string credencial);
 };
 
 #endif // FUNCION_PLANES_H
